@@ -1,0 +1,55 @@
+{
+  "name": "dx-exam",
+  "packageManager": "yarn@3.2.3",
+  "version": "0.0.1",
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": "https://github.com/DigiExam/dx-exam/",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react-dom",
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-native-web"
+    ]
+  },
+  "scripts": {
+    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
+    "android:metro": "yarn workspace @dx-exam/mobile start",
+    "android:start": "yarn workspace @dx-exam/mobile android",
+    "android:studio": "yarn workspace @dx-exam/mobile studio",
+    "ios:metro": "yarn workspace @dx-exam/mobile start",
+    "ios:start": "yarn workspace @dx-exam/mobile ios",
+    "ios:xcode": "yarn workspace @dx-exam/mobile xcode",
+    "ios:pods": "yarn workspace @dx-exam/mobile pods",
+    "macos:metro": "yarn workspace @dx-exam/macos start",
+    "macos:start": "yarn workspace @dx-exam/macos macos",
+    "macos:xcode": "yarn workspace @dx-exam/macos xcode",
+    "macos:pods": "yarn workspace @dx-exam/macos pods",
+    "web:start": "yarn workspace @dx-exam/web start",
+    "web:build": "yarn workspace @dx-exam/web build",
+    "browser-ext:start": "yarn workspace @dx-exam/browser-ext start",
+    "browser-ext:build": "yarn workspace @dx-exam/browser-ext build",
+    "windows:metro": "yarn workspace @dx-exam/windows start",
+    "windows:start": "yarn workspace @dx-exam/windows windows",
+    "lint": "ultra -r lint",
+    "lint:fix": "ultra -r lint:fix",
+    "test": "ultra -r test",
+    "typecheck": "ultra -r typecheck"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react-app": "^6.2.2",
+    "eslint-plugin-react-native": "^4.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.3",
+    "ultra-runner": "^3.10.5"
+  }
+}

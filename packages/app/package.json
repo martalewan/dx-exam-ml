@@ -1,0 +1,23 @@
+{
+  "name": "@dx-exam/app",
+  "packageManager": "yarn@3.2.3",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest --passWithNoTests",
+    "test:watch": "yarn jest --watch",
+    "typecheck": "tsc"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.20",
+    "@types/react-native": "^0.70.0",
+    "typescript": "^4.8.3"
+  }
+}

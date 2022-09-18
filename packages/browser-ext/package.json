@@ -1,0 +1,45 @@
+{
+  "name": "@dx-exam/browser-ext",
+  "packageManager": "yarn@3.2.3",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "INLINE_RUNTIME_CHUNK=false craco start",
+    "build": "INLINE_RUNTIME_CHUNK=false craco build",
+    "test": "react-scripts test --watchAll=false --passWithNoTests",
+    "eject": "react-scripts eject",
+    "lint": "eslint ",
+    "lint:fix": "yarn lint --fix"
+  },
+  "dependencies": {
+    "@dx-exam/app": "*",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-native": "^0.70.0",
+    "react-native-web": "^0.18.9",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^3.0.2"
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.4.5",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-native": "^0.70.0",
+    "react-native-monorepo-tools": "^1.2.0",
+    "webpack-extension-reloader": "1.1.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
