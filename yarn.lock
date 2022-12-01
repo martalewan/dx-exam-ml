@@ -1808,6 +1808,7 @@ __metadata:
   dependencies:
     "@types/react": ^18.0.20
     "@types/react-native": ^0.70.0
+    react-native-table-component: ^1.2.2
     typescript: ^4.8.3
   peerDependencies:
     react: "*"
@@ -3520,6 +3521,26 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: db571047af1a567631758700b9f7d143e566df939cfe5fbf7535347cc0c726a1cdbb5e3f8566d076e54cf708b6c1166689de194a9ba09ee35efc9e1d45911685
+  languageName: node
+  linkType: hard
+
+"@types/react-native-table-component@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "@types/react-native-table-component@npm:1.2.4"
+  dependencies:
+    "@types/react": "*"
+    "@types/react-native": "*"
+    csstype: ^3.0.3
+  checksum: ea7326ea3bb6015ff9bbfa09d9b8e1f6d8493d292ac6681d04d3753360d31f65d5827b102f3e73c96f9d0248f835b4430b74bc73e81f455ed688434d7dbd42bd
+  languageName: node
+  linkType: hard
+
+"@types/react-native@npm:*":
+  version: 0.70.6
+  resolution: "@types/react-native@npm:0.70.6"
+  dependencies:
+    "@types/react": "*"
+  checksum: 1b620095ddf2fe85157df9d57435edc619587eacb1a4fadd91c977c200cef8008e7fec4d8c5429ce373e1a2158199f1162f9c84e8e5a7d0b71a2224f31b64dfd
   languageName: node
   linkType: hard
 
@@ -6345,7 +6366,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.0.2":
+"csstype@npm:^3.0.2, csstype@npm:^3.0.3":
   version: 3.1.1
   resolution: "csstype@npm:3.1.1"
   checksum: 1f7b4f5fdd955b7444b18ebdddf3f5c699159f13e9cf8ac9027ae4a60ae226aef9bbb14a6e12ca7dba3358b007cee6354b116e720262867c398de6c955ea451d
@@ -6827,6 +6848,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dx-exam@workspace:."
   dependencies:
+    "@types/react-native-table-component": ^1.2.4
     "@typescript-eslint/eslint-plugin": ^5.37.0
     "@typescript-eslint/parser": ^5.37.0
     eslint: ^8.23.1
@@ -8263,7 +8285,7 @@ __metadata:
 
 "fsevents@patch:fsevents@^2.1.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -14293,6 +14315,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-table-component@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "react-native-table-component@npm:1.2.2"
+  checksum: 906a0ae3b23bcf4a98237d07853bb416feb3d512a4f28e758470a3c45154f15e92445d57ef272e3c3c24c7355ec6ccbf6b53e7ce917ed1964b9f973084d88c46
+  languageName: node
+  linkType: hard
+
 "react-native-web@npm:^0.18.9":
   version: 0.18.9
   resolution: "react-native-web@npm:0.18.9"
@@ -14873,7 +14902,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.18.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -14886,7 +14915,7 @@ __metadata:
 
 "resolve@patch:resolve@^2.0.0-next.3#~builtin<compat/resolve>":
   version: 2.0.0-next.4
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -16624,7 +16653,7 @@ __metadata:
 
 "typescript@patch:typescript@^4.8.3#~builtin<compat/typescript>":
   version: 4.8.3
-  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"
+  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=aae4e6"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver

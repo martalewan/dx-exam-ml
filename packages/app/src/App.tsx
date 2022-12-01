@@ -1,21 +1,98 @@
+<script src="http://localhost:8097"></script>
 import React from "react";
-import { Platform, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { subplatform } from "./config";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { NewGame, CreateGameScreen } from "./components/CreateGameScreen";
+import { GamesScreen } from "./components/GamesScreen";
+import { LeaderBoardScreen } from "./components/LeaderBoardScreen";
+import LoginScreen from "./components/LoginScreen";
+import { PlayScreen } from "./components/PlayScreen";
+import { SignInScreen } from "./components/SignInScreen";
 
 export function App(): JSX.Element {
-  const platformValue = subplatform
-    ? `${Platform.OS} (${subplatform})`
-    : Platform.OS;
+  const [isSignInPageVissible, setIsSignInPageVissible] = React.useState(true);
+  const [isLoginPageVissible, setIsLoginPageVissible] = React.useState(false);
+  const [isGamesPageVissible, setIsGamesPageVissible] = React.useState(false);
+  const [isCreateGamesPageVissible, setIsCreateGamesPageVissible] =
+    React.useState(false);
+  const [isPlayPageVissible, setIsPlayPageVissible] = React.useState(false);
+  const [isLeaderPageVissible, setIsLeaderPageVissible] = React.useState(false);
+
+  isLeaderPageVissible
+
+  const [games, setGames] = React.useState<NewGame[]>([
+    {
+      name: "Game Name",
+      id: Math.random().toString(),
+      creationDate: new Date().toLocaleString(),
+      opponentName: "Opponent",
+      gridSize: "8",
+      winner: "winner",
+    },
+    {
+      name: "Game Name 2",
+      id: Math.random().toString(),
+      creationDate: new Date().toLocaleString(),
+      opponentName: "Opponent",
+      gridSize: "8",
+      winner: "winner",
+    },
+  ]);
+
+  const [currentGameName, setCurrentGameName] = React.useState("");
+  const [currentGameSize, setCurrentGameSize] = React.useState("");
+  const [currentGameOpponent, setCurrentGameOpponent] = React.useState("");
 
   return (
     <SafeAreaView style={styles.root}>
-      <Text style={styles.text}>Hello from React Native!</Text>
-      <View style={styles.platformRow}>
-        <Text style={styles.text}>Platform: </Text>
-        <View style={styles.platformBackground}>
-          <Text style={styles.platformValue}>{platformValue}</Text>
-        </View>
-      </View>
+      {isSignInPageVissible && (
+        <SignInScreen
+          setIsSignInPageVissible={setIsSignInPageVissible}
+          setIsLoginPageVissible={setIsLoginPageVissible}
+        />
+      )}
+      {isLoginPageVissible && (
+        <LoginScreen
+          setIsGamePageVissible={setIsGamesPageVissible}
+          setIsLoginPageVissible={setIsLoginPageVissible}
+        />
+      )}
+      {isGamesPageVissible && (
+        <GamesScreen
+          setIsGamesPageVissible={setIsGamesPageVissible}
+          setIsCreateGamesPageVissible={setIsCreateGamesPageVissible}
+          games={games}
+        />
+      )}
+      {isCreateGamesPageVissible && (
+        <CreateGameScreen
+          setIsPlayPageVissible={setIsPlayPageVissible}
+          setIsCreateGamesPageVissible={setIsCreateGamesPageVissible}
+          games={games}
+          setGames={setGames}
+          currentGameName={currentGameName}
+          currentGameSize={currentGameSize}
+          currentGameOpponent={currentGameOpponent}
+          setCurrentGameName={setCurrentGameName}
+          setCurrentGameSize={setCurrentGameSize}
+          setCurrentGameOpponent={setCurrentGameOpponent}
+        />
+      )}
+      {isPlayPageVissible && (
+        <PlayScreen
+          setIsPlayPageVissible={setIsPlayPageVissible}
+          setIsCreateGamesPageVissible={setIsCreateGamesPageVissible}
+          setIsLeaderPageVissible={setIsLeaderPageVissible}
+          currentGameName={currentGameName}
+          currentGameSize={currentGameSize}
+          currentGameOpponent={currentGameOpponent}
+        />
+      )}
+      {isLeaderPageVissible && (
+        <LeaderBoardScreen
+        setIsCreateGamesPageVissible={setIsCreateGamesPageVissible}
+        setIsLeaderPageVissible= {setIsLeaderPageVissible}
+        />
+      )}
     </SafeAreaView>
   );
 }
@@ -26,31 +103,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "white",
+    padding: 8,
   },
-  logo: {
-    width: 120,
-    height: 120,
-    marginBottom: 20,
+  header: {
+    fontWeight: "bold",
+    marginBottom: 12,
   },
-  text: {
-    fontSize: 28,
-    fontWeight: "600",
-  },
-  platformRow: {
-    marginTop: 12,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  platformValue: {
-    fontSize: 28,
-    fontWeight: "500",
-  },
-  platformBackground: {
-    backgroundColor: "#ececec",
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: "#d4d4d4",
-    paddingHorizontal: 6,
-    borderRadius: 6,
-    alignItems: "center",
+  input: {
+    height: 40,
+    width: 150,
+    marginBottom: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });
