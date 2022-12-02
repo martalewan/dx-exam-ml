@@ -1,12 +1,13 @@
 <script src="http://localhost:8097"></script>
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { NewGame, CreateGameScreen } from "./components/CreateGameScreen";
-import { GamesScreen } from "./components/GamesScreen";
-import { LeaderBoardScreen } from "./components/LeaderBoardScreen";
-import LoginScreen from "./components/LoginScreen";
-import { PlayScreen } from "./components/PlayScreen";
-import { SignInScreen } from "./components/SignInScreen";
+import { CreateGameScreen } from "./components/screens/CreateGameScreen";
+import { NewGame } from "./components/screens/CreateGameScreenTypes";
+import { GamesScreen } from "./components/screens/GamesScreen";
+import { LeaderBoardScreen } from "./components/screens/LeaderBoardScreen";
+import LoginScreen from "./components/screens/LoginScreen";
+import { PlayScreen } from "./components/screens/PlayScreen";
+import { SignInScreen } from "./components/screens/SignInScreen";
 
 export function App(): JSX.Element {
   const [isSignInPageVissible, setIsSignInPageVissible] = React.useState(true);
@@ -102,18 +103,7 @@ const styles = StyleSheet.create({
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "white",
+    backgroundColor: "black",
     padding: 8,
-  },
-  header: {
-    fontWeight: "bold",
-    marginBottom: 12,
-  },
-  input: {
-    height: 40,
-    width: 150,
-    marginBottom: 12,
-    borderWidth: 1,
-    padding: 10,
   },
 });

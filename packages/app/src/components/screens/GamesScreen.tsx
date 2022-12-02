@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { Button, FlatList, StyleSheet, Text } from "react-native";
-import { NewGame } from "./CreateGameScreen";
+import { Button, FlatList, StyleSheet, Text, View } from "react-native";
+import { NewGame } from "./CreateGameScreenTypes";
 
 interface IGamesScreen {
   setIsGamesPageVissible: (arg0: boolean) => void;
@@ -16,7 +16,8 @@ export const GamesScreen: FC<IGamesScreen> = (props): JSX.Element => {
   };
 
   return (
-    <>
+    <View 
+    style={styles.gameContainer}>
       <Button
         title="Create new game"
         onPress={() => onCreateGamePress()}
@@ -25,32 +26,37 @@ export const GamesScreen: FC<IGamesScreen> = (props): JSX.Element => {
         style={styles.gamesList}
         data={props.games}
         renderItem={({ item }) => (
-					<>
-					  <Text style={styles.date}>{item.creationDate}</Text>
-						<Text style={styles.gameItem}>{item.name} * {item.opponentName} * {item.gridSize} * {item.winner}</Text>
-					</>
-
+					<View style={styles.gameItemsContainer}>
+					  <Text style={styles.date}>  {item.creationDate} - {item.name} ({item.gridSize})</Text>
+						<Text style={styles.gameItem}> vs {item.opponentName} won: {item.winner}</Text>
+					</View>
         )}
       />
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   gamesList: {
-    marginTop: 10
+    marginTop: 12
+  },
+  gameContainer: {
+    marginTop: 18,
+  },
+  gameItemsContainer: {
+    borderWidth: 1,
+    marginTop: 12,
+    padding: 3,
+    backgroundColor: "white",
+
   },
   date: {
-    backgroundColor: "lightgrey",
-		marginTop: 8,
-		textAlign: "center"
+    textAlign: "center",
+    color: "black",
   },
   gameItem: {
-		fontWeight: "bold",
 		textAlign: "center",
-    borderColor: "lightgrey",
-    borderWidth: 3,
-    paddingTop: 5,
+    color: "black",
     paddingLeft: 3,
     paddingRight: 3
 	},

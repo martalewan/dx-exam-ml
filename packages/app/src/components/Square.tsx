@@ -1,15 +1,6 @@
 import React, { FC } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-
-interface ISquereProps {
-    gameId: string;
-    x: number;
-    y: number;
-    onPressSquare: (arg0: number, arg1: number) => void;
-    gridSize: number;
-    fill: string
-    winningCell: string
-}
+import { ISquereProps } from "./SquareTypes";
 
 const Squere: FC<ISquereProps> = (props): JSX.Element => {
   return (
@@ -37,7 +28,6 @@ const styles = StyleSheet.create({
     },
     button: {
         flexGrow: 1,
-
     },
     buttonWinning: {
       flexGrow: 1,
@@ -46,6 +36,7 @@ const styles = StyleSheet.create({
     text: {
       fontWeight: "900",
       fontSize: 20,
-      position: "absolute"
+      position: "absolute",
+      color: "black"
     }
 });

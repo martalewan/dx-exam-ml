@@ -1,14 +1,8 @@
 import React, { FC }  from "react";
 import { StyleSheet, TextInput } from "react-native";
-
-interface ITextInputElement {
-  fileldPlaceholder: string | undefined;
-  fieldValue: string | undefined; 
-  fieldSetter: (arg0: string) => void;
-}
+import { ITextInputElement } from "./TextInputElementTypes";
 
 export const TextInputElement: FC<ITextInputElement> = (props): JSX.Element => {
-
   return (
     <TextInput
       style={styles.input}
@@ -26,5 +20,6 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
     borderWidth: 1,
     padding: 10,
+    backgroundColor: "white",
   }
 });
